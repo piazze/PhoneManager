@@ -1,0 +1,44 @@
+@charset "UTF-8";
+table{
+		margin:0 auto;
+		width:100%;
+		border-left:1px solid gray;
+		border-top:1px solid gray;
+	}
+	
+	td{
+		border-right:1px solid gray;
+		border-bottom:1px solid gray;
+		text-align:center;
+	}
+	tr{
+		line-height: 30px;
+	}
+	tr:first-of-type {
+		font-weight:bold;
+	}
+	
+	.wrap{
+		width:500px;
+		margin:0 auto;
+	}
+	.add{
+		float:right;
+	}
+	
+	.clearfix:after{
+		content:'';
+		display:table;
+		clear:both;
+	}
+	.btn{
+		text-align: center;
+	}
+	button{
+		margin: 10px;
+	    border: 1px solid transparent;
+	    padding: 8px 20px;
+	    border-radius: 3px;
+	    background: linear-gradient(to bottom,#337ab7 0,#265a88 100%);
+	    color: #fff;
+	}

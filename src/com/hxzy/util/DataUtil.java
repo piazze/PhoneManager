@@ -38,5 +38,7 @@ public class DataUtil {
 		this.code = code;
 		this.msg = msg;
 	}
-
+	public DataUtil() {
+		super();
+	}
 }

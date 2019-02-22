@@ -53,8 +53,24 @@ public class LoginFilter implements Filter {
 		if (null != user) { //已经登录
 			chain.doFilter(request, response);
 		} else {
+			//获取当前请求的路径
+			//   协议 :// 服务器名字:端口号/项目名
+			//   http://localhost:8080/PhoneManager
+	        String basePath = request.getScheme() + "://" + request.getServerName() + ":"  + request.getServerPort()+req.getContextPath();
+			
 			//重定向到登录页面
-			resp.sendRedirect("login.jsp");
+			String xmlHttpRequest = req.getHeader("X-Requested-With");
+			if ("XMLHttpRequest".equals(xmlHttpRequest)) { //说明这是一次ajax的请求
+				//前端需要判断是否是重定向
+				resp.setHeader("REDIRECT", "REDIRECT");
+	            //需要重定向的路径
+				resp.setHeader("CONTENTPATH", basePath+"/login.jsp");
+				resp.setStatus(HttpServletResponse.SC_FORBIDDEN);
+			}else {
+				resp.sendRedirect("/PhoneManager/login.jsp");
+			}
+			
+			
 		}
 		
 		

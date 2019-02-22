@@ -75,7 +75,7 @@
 					http://127.0.0.1:8080/PhoneManager/register?account=admin&loginPwd=123
 				*/
 				data:"account="+$("[name='account']").val() + "&loginPwd=" + $("[name='loginPwd']").val() ,//要发送到数据库的数据
-				method:"POST",//提交方式
+				type:"POST",//提交方式
 				success:function(data){ //服务器响应的数据在data中
 					$("div.msg").text(data["msg"]);
 				}

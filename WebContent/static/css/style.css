@@ -42,3 +42,64 @@ table{
 	    background: linear-gradient(to bottom,#337ab7 0,#265a88 100%);
 	    color: #fff;
 	}
+	
+	a{
+		color:#0665A5;
+		text-decoration: none;
+	}
+	
+	html{
+		height:100%;
+	}
+	body{
+		margin:0;
+		padding: 0;
+	}
+	
+	.modal{
+		display:none;/*模态框默认隐藏*/
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left:0;
+		top:0;
+	}
+	
+	.modal .mask{
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.2);
+		z-index: 998;
+		position: absolute;
+		left:0;
+		top:0;
+	}
+	
+	.modal .content{
+		position: absolute;
+		width: 200px;
+		height: 50px;
+		background: #fff;
+		
+		/*提示内容显示在页面的正中*/
+		left: 50%;
+		top:50%;
+		margin-left: -100px;
+		margin-top: -25px;
+		z-index: 999;
+		border-radius: 5px;
+		box-shadow: 0 3px 10px #000;
+		text-align: center;
+	}
+	
+	.success,.fail{
+		font:normal bold 30px "微软雅黑"; 
+		line-height: 50px;
+	}
+	
+	.success{
+		color:green;
+	}
+	.fail{
+		color:red;
+	}
